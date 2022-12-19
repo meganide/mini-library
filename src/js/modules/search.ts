@@ -9,7 +9,9 @@ function search(allBooks: Book[]) {
 
   if (searchedBook[0]) {
     displayBook(undefined, searchedBook[0]);
+    query.value = '';
   }
+
 }
 
 export { search };
