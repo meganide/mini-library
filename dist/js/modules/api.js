@@ -7,12 +7,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { httpGetBooks } from './modules/api.js';
-import { populateBooks } from './modules/populateBooks.js';
-function main() {
+const API_URL = 'https://my-json-server.typicode.com/zocom-christoffer-wallenberg/books-api/books';
+function httpGetBooks() {
     return __awaiter(this, void 0, void 0, function* () {
-        const allBooks = yield httpGetBooks();
-        populateBooks(allBooks);
+        const response = yield fetch(API_URL);
+        const data = yield response.json();
+        return data;
     });
 }
-main();
+export { httpGetBooks };
