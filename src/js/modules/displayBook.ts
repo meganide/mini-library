@@ -1,15 +1,8 @@
 import { Book } from './interfaces';
 
-function displayBook(e: MouseEvent, book: Book) {
+function displayBook(e: any, book: Book) {
   populateBook(book);
   toggleShowPages();
-}
-
-function toggleShowPages() {
-  const singleBookPage = document.querySelector('.single-book') as HTMLElement;
-  const allBooksPage = document.querySelector('.books') as HTMLElement;
-  singleBookPage.classList.toggle('hide');
-  allBooksPage.classList.toggle('hide');
 }
 
 function populateBook(book: Book) {
@@ -41,6 +34,15 @@ function populateBook(book: Book) {
       point.textContent = pointKeys[index].toString();
     }
   });
+}
+
+function toggleShowPages() {
+  const singleBookPage = document.querySelector('.single-book') as HTMLElement;
+  const allBooksPage = document.querySelector('.books') as HTMLElement;
+  const search = document.querySelector('.search') as HTMLElement;
+  singleBookPage.classList.toggle('hide');
+  allBooksPage.classList.toggle('hide');
+  search.classList.toggle('hide');
 }
 
 export { displayBook };

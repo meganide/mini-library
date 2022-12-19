@@ -2,12 +2,6 @@ function displayBook(e, book) {
     populateBook(book);
     toggleShowPages();
 }
-function toggleShowPages() {
-    const singleBookPage = document.querySelector('.single-book');
-    const allBooksPage = document.querySelector('.books');
-    singleBookPage.classList.toggle('hide');
-    allBooksPage.classList.toggle('hide');
-}
 function populateBook(book) {
     const arrow = document.querySelector('.arrow');
     arrow.addEventListener('click', toggleShowPages);
@@ -30,5 +24,13 @@ function populateBook(book) {
             point.textContent = pointKeys[index].toString();
         }
     });
+}
+function toggleShowPages() {
+    const singleBookPage = document.querySelector('.single-book');
+    const allBooksPage = document.querySelector('.books');
+    const search = document.querySelector('.search');
+    singleBookPage.classList.toggle('hide');
+    allBooksPage.classList.toggle('hide');
+    search.classList.toggle('hide');
 }
 export { displayBook };

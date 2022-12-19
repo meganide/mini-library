@@ -9,10 +9,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import { httpGetBooks } from './modules/api.js';
 import { populateBooks } from './modules/populateBooks.js';
+import { search } from './modules/search.js';
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
         const allBooks = yield httpGetBooks();
         populateBooks(allBooks);
+        const searchButton = document.querySelector('.search__submit');
+        searchButton.addEventListener('click', () => search(allBooks));
     });
 }
 main();

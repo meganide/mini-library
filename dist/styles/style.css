@@ -54,6 +54,31 @@ h6 {
   display: none !important;
 }
 
+.search {
+  background-color: transparent;
+  border: 1px solid rgb(92, 92, 92);
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+#searchBook {
+  color: rgb(224, 224, 224);
+  padding: 0 10px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.search__submit {
+  color: white;
+  background-color: rgb(58, 58, 58);
+  border-radius: 5px;
+  border: 1px solid gray;
+  padding: 2px 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
